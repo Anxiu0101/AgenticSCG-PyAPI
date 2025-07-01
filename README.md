@@ -19,6 +19,22 @@ pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 
+---
+
+This service depends on the static analysis tool Bandit and CodeQL. The bandit automatic installed by `pip`.
+Install the CodeQL from [CodeQL CLI release page](https://github.com/github/codeql-cli-binaries/releases), add the CodeQL binary to system path.
+Using the following command to check configuration.
+
+```shell
+codeql
+```
+
+Then installing the python security suit by `codeql`,
+
+```shell
+codeql pack download codeql/python-queries
+```
+
 ## Api Introduction
 
 `/api/v1/secure-scan/python` 
